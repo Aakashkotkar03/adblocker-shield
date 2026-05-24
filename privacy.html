@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — AdBlocker Shield</title>
+  <meta name="description" content="AdBlocker Shield Privacy Policy. We collect zero personal data. All processing happens locally on your device.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .privacy-hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 20px; border-radius: var(--r);
+      background: rgba(14,28,14,.7); border: 1px solid var(--green-border);
+      margin-bottom: 40px;
+    }
+    .privacy-hero-badge .badge-icon {
+      font-size: 28px;
+    }
+    .privacy-hero-badge-text .badge-title {
+      font-family: var(--mono); font-size: 11px; font-weight: 700;
+      letter-spacing: .15em; color: var(--green); text-transform: uppercase; margin-bottom: 2px;
+    }
+    .privacy-hero-badge-text .badge-sub {
+      font-size: 12px; color: var(--on2);
+    }
+
+    .pledge-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+      margin-bottom: 60px;
+    }
+    @media (max-width: 640px) { .pledge-cards { grid-template-columns: 1fr; } }
+    .pledge-mini {
+      padding: 22px; border-radius: var(--r);
+      background: rgba(14,28,14,.6); border: 1px solid var(--green-border);
+      backdrop-filter: blur(12px); text-align: center;
+    }
+    .pledge-mini-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+    .pledge-mini-title { font-size: 13px; font-weight: 700; color: var(--on); margin-bottom: 6px; }
+    .pledge-mini-desc { font-size: 12px; color: var(--on2); line-height: 1.6; }
+
+    .never-list {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px;
+    }
+    .never-tag {
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      color: var(--red); background: rgba(255,180,171,.06);
+      border: 1px solid rgba(255,180,171,.2);
+      padding: 4px 12px; border-radius: 99px; letter-spacing: .06em;
+    }
+    .stored-tag {
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      color: var(--green); background: var(--green-10);
+      border: 1px solid var(--green-border);
+      padding: 4px 12px; border-radius: 99px; letter-spacing: .06em;
+    }
+
+    .contact-box {
+      margin-top: 48px; padding: 28px; border-radius: var(--r);
+      background: var(--surface); border: 1px solid var(--border);
+      backdrop-filter: blur(12px); text-align: center;
+    }
+    .contact-box p { margin-bottom: 12px; }
+    .contact-email {
+      font-family: var(--mono); font-size: 14px; font-weight: 700;
+      color: var(--cyan); border-bottom: 1px solid rgba(0,240,255,.3);
+      transition: color .2s;
+    }
+    .contact-email:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="dot-grid" aria-hidden="true"></div>
+  <div class="scan-line" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav glass">
+    <div class="nav-brand">
+      <img src="assets/logo.png" alt="AdBlocker Shield" class="nav-logo">
+      <span class="nav-brand-text">AdBlocker Shield</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="terms.html" class="nav-link">Terms</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+    <a href="#" class="nav-cta">⬇ Add to Chrome</a>
+    <button class="nav-mobile-toggle" aria-label="Menu">☰</button>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-eyebrow">
+        <span class="page-hero-eyebrow-dot"></span>
+        Privacy Policy
+      </div>
+      <h1>We collect <span>zero</span> personal data</h1>
+      <p class="page-hero-sub">
+        This isn't just legal boilerplate — it's our core architecture.
+        AdBlocker Shield is built from the ground up to process everything locally.
+        There is no server to send your data to.
+      </p>
+    </div>
+  </section>
+
+  <!-- Trust badges -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="pledge-cards">
+        <div class="pledge-mini">
+          <span class="pledge-mini-icon">🔒</span>
+          <div class="pledge-mini-title">On-Device Only</div>
+          <div class="pledge-mini-desc">All data lives in Chrome's local storage. Only you can access it.</div>
+        </div>
+        <div class="pledge-mini">
+          <span class="pledge-mini-icon">👁️‍🗨️</span>
+          <div class="pledge-mini-title">No Browsing Logs</div>
+          <div class="pledge-mini-desc">We never see, log, or transmit the websites you visit.</div>
+        </div>
+        <div class="pledge-mini">
+          <span class="pledge-mini-icon">🚫</span>
+          <div class="pledge-mini-title">No Data Sales</div>
+          <div class="pledge-mini-desc">Your data is never sold, rented, or shared with any third party.</div>
+        </div>
+      </div>
+
+      <!-- Prose content -->
+      <div class="prose">
+        <span class="date-tag">Last Updated: May 2025</span>
+
+        <div class="highlight">
+          <p><strong>Short version:</strong> AdBlocker Shield does not collect, store, or transmit any personal information. All blocking statistics and settings are stored locally on your device using Chrome's built-in storage API. We have no servers, no backend, and no way to access your data even if we wanted to.</p>
+        </div>
+
+        <h2>1. What We Collect</h2>
+        <p><strong>We collect nothing.</strong> AdBlocker Shield does not collect any personal information, usage data, browsing history, IP addresses, or any other identifying information from its users.</p>
+        <p>The extension does store the following <em>locally on your own device</em>:</p>
+        <div class="never-list">
+          <span class="stored-tag">Block counts (lifetime + session)</span>
+          <span class="stored-tag">Blocked domain names (not full URLs)</span>
+          <span class="stored-tag">Your extension settings</span>
+          <span class="stored-tag">Whitelisted domains you add</span>
+          <span class="stored-tag">Minutes of attention saved (estimated)</span>
+        </div>
+        <p>None of this information ever leaves your device. It is stored using the <code>chrome.storage.local</code> API which is only accessible to the extension running on your browser.</p>
+
+        <h2>2. What We Never Collect</h2>
+        <p>To be absolutely clear, AdBlocker Shield never collects, stores, or has access to:</p>
+        <div class="never-list">
+          <span class="never-tag">Full URLs you visit</span>
+          <span class="never-tag">Page content</span>
+          <span class="never-tag">Search queries</span>
+          <span class="never-tag">Form inputs or passwords</span>
+          <span class="never-tag">Cookies or session data</span>
+          <span class="never-tag">IP address or location</span>
+          <span class="never-tag">Device information</span>
+          <span class="never-tag">Your identity or name</span>
+          <span class="never-tag">Financial information</span>
+          <span class="never-tag">Browser fingerprint</span>
+        </div>
+
+        <h2>3. Backend Infrastructure</h2>
+        <p>AdBlocker Shield has no backend server infrastructure for data collection. There is no database, no analytics pipeline, and no data ingestion system.</p>
+        <p>The extension operates entirely within your browser using:</p>
+        <ul>
+          <li><strong>chrome.declarativeNetRequest</strong> — Chrome's native API for blocking network requests using locally-stored rules</li>
+          <li><strong>chrome.storage.local</strong> — For storing your settings and statistics locally on your device</li>
+          <li><strong>Content scripts</strong> — JavaScript that runs in your browser to remove ad elements from pages</li>
+          <li><strong>chrome.notifications</strong> — For milestone notifications (displayed locally, no data sent)</li>
+        </ul>
+
+        <h2>4. Third-Party Services</h2>
+        <p>AdBlocker Shield uses the following third-party services in its user interface only:</p>
+        <ul>
+          <li><strong>Google Fonts</strong> — We load the Inter and JetBrains Mono fonts from Google's CDN. This is a standard web font request and is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>. To avoid this, you may use the extension offline after fonts have cached.</li>
+          <li><strong>Chrome Web Store</strong> — The extension is distributed through and governed by Google Chrome's extension policies.</li>
+        </ul>
+        <p>We do not integrate any analytics services, crash reporting tools, or advertising networks into AdBlocker Shield.</p>
+
+        <h2>5. Chrome Web Store Ratings</h2>
+        <p>If you choose to leave a rating or review for AdBlocker Shield on the Chrome Web Store, that review is governed by Google's Privacy Policy and is submitted directly to Google, not to us. We receive no personal data from this process.</p>
+
+        <h2>6. Data Security</h2>
+        <p>Because we collect no personal data and store all information locally on your device, your data is protected by Chrome's security model. Chrome's storage API encrypts stored data as part of your browser profile. We cannot access, retrieve, or breach this data.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>AdBlocker Shield does not knowingly collect data from anyone, including children under the age of 13. The extension collects no data whatsoever, making it safe for use by users of any age.</p>
+
+        <h2>8. Deleting Your Data</h2>
+        <p>Since all data is stored locally, you can delete it at any time by:</p>
+        <ul>
+          <li><strong>Resetting session stats</strong> in the extension dashboard</li>
+          <li><strong>Uninstalling the extension</strong> from Chrome, which removes all locally stored data permanently</li>
+          <li><strong>Clearing Chrome's extension data</strong> from Chrome Settings → Privacy → Clear Browsing Data</li>
+        </ul>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>If we make changes to this privacy policy that affect how data is handled (such as introducing a new feature that collects information), we will update this page with the new effective date and notify users through the extension itself. Given our commitment to zero data collection, we do not anticipate significant changes.</p>
+
+        <h2>10. Open Ruleset</h2>
+        <p>AdBlocker Shield's 161+ network blocking rules are auditable and transparent. The filtering rules are stored in the extension's <code>filters/rules.json</code> file. This file contains only domain patterns for blocking — no user data.</p>
+
+        <h2>11. Contact</h2>
+        <p>If you have questions or concerns about this privacy policy, please contact us:</p>
+
+        <div class="contact-box">
+          <p><strong style="color:var(--on)">Privacy Questions</strong></p>
+          <p>We're happy to answer any questions about how AdBlocker Shield works and what data it handles.</p>
+          <a href="mailto:certifypro.technology@gmail.com" class="contact-email">certifypro.technology@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand" style="margin-bottom:16px">
+            <img src="assets/logo.png" alt="AdBlocker Shield" class="footer-brand-logo">
+            <div>
+              <div class="footer-brand-name">AdBlocker Shield</div>
+            </div>
+          </div>
+          <p class="footer-brand-desc">Privacy-first ad blocker. Zero servers. Zero data collection. Everything on your device.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Product</div>
+          <a href="#">Add to Chrome</a>
+          <a href="index.html">Home</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Support</div>
+          <a href="support.html">Help Center</a>
+          <a href="mailto:certifypro.technology@gmail.com">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 AdBlocker Shield. All rights reserved.</span>
+        <a href="mailto:certifypro.technology@gmail.com" class="footer-email mono">certifypro.technology@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

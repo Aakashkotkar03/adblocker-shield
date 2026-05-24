@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — AdBlocker Shield</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .error-page {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1; text-align: center;
+    }
+    .error-code {
+      font-family: var(--mono); font-size: 120px; font-weight: 700;
+      color: rgba(0,240,255,.08); line-height: 1; margin-bottom: -20px;
+      letter-spacing: -.04em;
+    }
+    .error-title { font-size: 28px; font-weight: 700; color: var(--on); margin-bottom: 14px; }
+    .error-sub { font-size: 16px; color: var(--on2); margin-bottom: 36px; max-width: 420px; }
+    .error-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <div class="dot-grid" aria-hidden="true"></div>
+  <div class="scan-line" aria-hidden="true"></div>
+  <nav class="nav glass">
+    <div class="nav-brand">
+      <img src="assets/logo.png" alt="AdBlocker Shield" class="nav-logo">
+      <span class="nav-brand-text">AdBlocker Shield</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="terms.html" class="nav-link">Terms</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+    <a href="#" class="nav-cta">⬇ Add to Chrome</a>
+    <button class="nav-mobile-toggle" aria-label="Menu">☰</button>
+  </nav>
+  <div class="error-page">
+    <div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page not found</h1>
+      <p class="error-sub">This page doesn't exist or has been moved. Unlike ads, we can't block the 404.</p>
+      <div class="error-actions">
+        <a href="index.html" class="btn-primary">← Back Home</a>
+        <a href="support.html" class="btn-secondary">Get Help</a>
+      </div>
+    </div>
+  </div>
+  <script src="assets/script.js"></script>
+</body>
+</html>

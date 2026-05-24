@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — AdBlocker Shield</title>
+  <meta name="description" content="AdBlocker Shield Terms of Service. Free to use, privacy-first Chrome extension.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .terms-grid {
+      display: grid; grid-template-columns: 240px 1fr; gap: 48px;
+      align-items: flex-start;
+    }
+    @media (max-width: 768px) { .terms-grid { grid-template-columns: 1fr; } }
+    .terms-toc {
+      position: sticky; top: 90px;
+      padding: 22px; border-radius: var(--r);
+      background: var(--surface); border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .toc-title {
+      font-family: var(--mono); font-size: 9px; font-weight: 700;
+      letter-spacing: .2em; color: var(--out); text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .toc-link {
+      display: block; font-size: 12px; color: var(--on2);
+      padding: 6px 0; border-bottom: 1px solid var(--border2);
+      transition: color .2s;
+    }
+    .toc-link:last-child { border-bottom: none; }
+    .toc-link:hover { color: var(--cyan); }
+    @media (max-width: 768px) { .terms-toc { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="dot-grid" aria-hidden="true"></div>
+  <div class="scan-line" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav glass">
+    <div class="nav-brand">
+      <img src="assets/logo.png" alt="AdBlocker Shield" class="nav-logo">
+      <span class="nav-brand-text">AdBlocker Shield</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="terms.html" class="nav-link">Terms</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+    <a href="#" class="nav-cta">⬇ Add to Chrome</a>
+    <button class="nav-mobile-toggle" aria-label="Menu">☰</button>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-eyebrow">
+        <span class="page-hero-eyebrow-dot"></span>
+        Terms of Service
+      </div>
+      <h1>Terms of <span>Service</span></h1>
+      <p class="page-hero-sub">
+        By installing or using AdBlocker Shield, you agree to these terms.
+        They're written in plain language — no legalese traps.
+      </p>
+    </div>
+  </section>
+
+  <!-- Terms content -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="terms-grid">
+
+        <!-- Table of contents -->
+        <aside class="terms-toc">
+          <div class="toc-title">Contents</div>
+          <a href="#acceptance" class="toc-link">1. Acceptance</a>
+          <a href="#description" class="toc-link">2. Description</a>
+          <a href="#license" class="toc-link">3. License</a>
+          <a href="#acceptable-use" class="toc-link">4. Acceptable Use</a>
+          <a href="#privacy" class="toc-link">5. Privacy</a>
+          <a href="#disclaimer" class="toc-link">6. Disclaimer</a>
+          <a href="#liability" class="toc-link">7. Limitation of Liability</a>
+          <a href="#third-party" class="toc-link">8. Third-Party Content</a>
+          <a href="#updates" class="toc-link">9. Updates</a>
+          <a href="#termination" class="toc-link">10. Termination</a>
+          <a href="#contact" class="toc-link">11. Contact</a>
+        </aside>
+
+        <!-- Prose -->
+        <div class="prose">
+          <span class="date-tag">Last Updated: May 2025 · Effective: May 2025</span>
+
+          <div class="highlight">
+            <p><strong>Plain English summary:</strong> AdBlocker Shield is free. Use it to block ads. Don't try to hack it, reverse-engineer it for harmful purposes, or misrepresent it. We provide it as-is with no warranty. We are not liable if something goes wrong. Your data stays on your device.</p>
+          </div>
+
+          <h2 id="acceptance">1. Acceptance of Terms</h2>
+          <p>By downloading, installing, or using the AdBlocker Shield browser extension ("the Extension"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not install or use the Extension.</p>
+          <p>These Terms apply to all users of the Extension, regardless of how the Extension is accessed or used.</p>
+
+          <h2 id="description">2. Description of Service</h2>
+          <p>AdBlocker Shield is a free browser extension for Google Chrome that:</p>
+          <ul>
+            <li>Blocks advertisements and tracking scripts using Chrome's declarativeNetRequest API</li>
+            <li>Removes ad elements from web pages using CSS cosmetic filtering</li>
+            <li>Provides a dashboard interface showing blocking statistics stored locally</li>
+            <li>Displays a world map visualization for ambient awareness of global ad blocking activity</li>
+            <li>Offers YouTube ad-skipping functionality</li>
+          </ul>
+          <p>The Extension is provided free of charge and is intended for personal, non-commercial use.</p>
+
+          <h2 id="license">3. License</h2>
+          <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to install and use the Extension for your personal, non-commercial browsing purposes.</p>
+          <p>You may not:</p>
+          <ul>
+            <li>Copy, modify, distribute, sell, or lease any part of the Extension</li>
+            <li>Reverse-engineer or attempt to extract the source code for commercial or harmful purposes</li>
+            <li>Remove or alter any proprietary notices, labels, or branding within the Extension</li>
+            <li>Use the Extension to build a competing product or service</li>
+          </ul>
+
+          <h2 id="acceptable-use">4. Acceptable Use</h2>
+          <p>The Extension is designed to improve your personal browsing experience. You agree to use it only for lawful purposes and in compliance with these Terms.</p>
+          <p>You may not use the Extension in any way that:</p>
+          <ul>
+            <li>Violates any applicable local, national, or international law or regulation</li>
+            <li>Attempts to interfere with, compromise, or disrupt any third-party systems or services beyond standard ad blocking</li>
+            <li>Constitutes fraudulent, deceptive, or harmful conduct toward website owners or other users</li>
+          </ul>
+          <p>We acknowledge that website publishers rely on advertising revenue, and we respect users' right to control their own browsing experience. The use of ad blockers is legal in most jurisdictions.</p>
+
+          <h2 id="privacy">5. Privacy</h2>
+          <p>Your privacy is paramount to us. AdBlocker Shield collects zero personal data. All statistics, settings, and preferences are stored locally on your device using Chrome's storage API and are never transmitted to any server.</p>
+          <p>For complete details, please read our <a href="privacy.html">Privacy Policy</a>, which forms part of these Terms.</p>
+
+          <h2 id="disclaimer">6. Disclaimer of Warranties</h2>
+          <p>The Extension is provided "as is" and "as available" without any warranties of any kind, either express or implied, including but not limited to:</p>
+          <ul>
+            <li>Warranties of merchantability or fitness for a particular purpose</li>
+            <li>Warranties that the Extension will be uninterrupted, error-free, or completely secure</li>
+            <li>Warranties that all ads or trackers will be blocked on all websites at all times</li>
+          </ul>
+          <p>Ad-blocking effectiveness may vary depending on the website, browser version, Chrome updates, and changes made by advertisers to circumvent blocking. We make no guarantee that the Extension will block every advertisement or tracker on every page.</p>
+          <p>We do not warrant that the Extension is compatible with all versions of Chrome or will function without interruption following Chrome or website updates.</p>
+
+          <h2 id="liability">7. Limitation of Liability</h2>
+          <p>To the maximum extent permitted by applicable law, AdBlocker Shield and its creators shall not be liable for:</p>
+          <ul>
+            <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+            <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
+            <li>Damages resulting from your use or inability to use the Extension</li>
+            <li>Damages resulting from any ads, malware, or tracking that the Extension fails to block</li>
+            <li>Damages resulting from unauthorized access to your local data (governed by Chrome's security model, not ours)</li>
+          </ul>
+          <p>In all cases, our total liability to you for any claims shall not exceed the amount you paid for the Extension (which is zero, as the Extension is free).</p>
+
+          <h2 id="third-party">8. Third-Party Websites and Content</h2>
+          <p>The Extension operates alongside third-party websites and may interact with them by blocking network requests or hiding page elements. We are not responsible for:</p>
+          <ul>
+            <li>The content, privacy practices, or terms of any third-party website</li>
+            <li>Any changes third-party websites make specifically to detect or circumvent ad blockers</li>
+            <li>Any website functionality that breaks as a result of ad or script blocking</li>
+          </ul>
+          <p>Some websites may implement anti-ad-blocking measures that restrict access to content when an ad blocker is detected. We do not guarantee that the Extension will circumvent such restrictions.</p>
+
+          <h2 id="updates">9. Updates and Changes</h2>
+          <p><strong>Extension Updates:</strong> We may update the Extension from time to time to improve functionality, update blocking rules, or fix issues. Updates distributed through the Chrome Web Store are governed by Google's policies. We will not push updates that introduce data collection without updating this policy and notifying users.</p>
+          <p><strong>Terms Updates:</strong> We may update these Terms from time to time. The updated Terms will be posted on this page with a new "Last Updated" date. Continued use of the Extension after changes constitutes acceptance of the new Terms.</p>
+
+          <h2 id="termination">10. Termination</h2>
+          <p>These Terms are effective until terminated. Your rights under these Terms will terminate automatically if you fail to comply with any of its provisions.</p>
+          <p>You may terminate these Terms at any time by uninstalling the Extension from your browser. Uninstalling the Extension will also permanently delete all locally stored data.</p>
+
+          <h2 id="contact">11. Contact</h2>
+          <p>For questions about these Terms, please contact:</p>
+          <div style="margin-top:20px;padding:22px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);text-align:center">
+            <p style="margin-bottom:8px;font-size:14px;color:var(--on)"><strong>AdBlocker Shield Support</strong></p>
+            <a href="mailto:certifypro.technology@gmail.com" style="font-family:var(--mono);font-size:14px;color:var(--cyan);border-bottom:1px solid rgba(0,240,255,.3)">certifypro.technology@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand" style="margin-bottom:16px">
+            <img src="assets/logo.png" alt="AdBlocker Shield" class="footer-brand-logo">
+            <div><div class="footer-brand-name">AdBlocker Shield</div></div>
+          </div>
+          <p class="footer-brand-desc">Free, privacy-first ad blocker. Zero servers, zero data collection.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Product</div>
+          <a href="#">Add to Chrome</a>
+          <a href="index.html">Home</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Support</div>
+          <a href="support.html">Help Center</a>
+          <a href="mailto:certifypro.technology@gmail.com">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 AdBlocker Shield. All rights reserved.</span>
+        <a href="mailto:certifypro.technology@gmail.com" class="footer-email mono">certifypro.technology@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

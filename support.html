@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — AdBlocker Shield</title>
+  <meta name="description" content="AdBlocker Shield Support. Get help, report issues, or send us a message. Contact: certifypro.technology@gmail.com">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ── Support layout ── */
+    .support-grid {
+      display: grid; grid-template-columns: 1fr 420px; gap: 40px;
+      align-items: flex-start;
+    }
+    @media (max-width: 900px) { .support-grid { grid-template-columns: 1fr; } }
+
+    /* ── Contact card ── */
+    .contact-card {
+      padding: 36px; border-radius: 18px;
+      background: var(--surface); border: 1px solid rgba(0,240,255,.14);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 40px rgba(0,240,255,.05);
+      position: sticky; top: 90px;
+    }
+    .contact-card-title {
+      font-size: 18px; font-weight: 700; color: var(--on);
+      margin-bottom: 6px;
+    }
+    .contact-card-sub { font-size: 13px; color: var(--on2); margin-bottom: 28px; line-height: 1.6; }
+    .form-submit-row { display: flex; justify-content: flex-end; margin-top: 4px; }
+    .toast {
+      display: none; margin-top: 16px; padding: 12px 16px;
+      border-radius: var(--rsm); background: var(--green-10);
+      border: 1px solid var(--green-border);
+      font-size: 13px; color: var(--green); text-align: center;
+    }
+    .toast.show { display: block; }
+    .direct-email {
+      margin-top: 24px; padding: 16px; border-radius: var(--rsm);
+      background: rgba(255,255,255,.02); border: 1px solid var(--border2);
+      text-align: center;
+    }
+    .direct-email-label {
+      font-family: var(--mono); font-size: 9px; font-weight: 700;
+      letter-spacing: .18em; color: var(--out); text-transform: uppercase;
+      margin-bottom: 6px; display: block;
+    }
+    .direct-email-link {
+      font-family: var(--mono); font-size: 13px; font-weight: 700;
+      color: var(--cyan); border-bottom: 1px solid rgba(0,240,255,.3); transition: color .2s;
+    }
+    .direct-email-link:hover { color: #fff; }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      border-radius: var(--r);
+      background: var(--surface); border: 1px solid var(--border);
+      backdrop-filter: blur(12px); overflow: hidden;
+      transition: border-color .3s;
+    }
+    .faq-item:hover { border-color: rgba(0,240,255,.2); }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; background: none; border: none;
+      color: var(--on); font-size: 14px; font-weight: 600;
+      text-align: left; cursor: pointer; gap: 12px;
+      transition: color .2s;
+    }
+    .faq-q:hover { color: var(--cyan); }
+    .faq-arrow {
+      flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+      background: var(--cyan-10); border: 1px solid rgba(0,240,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: var(--cyan); transition: transform .3s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s cubic-bezier(.4,0,.2,1), padding .3s;
+      padding: 0 22px;
+      font-size: 14px; color: var(--on2); line-height: 1.75;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 22px 18px; }
+
+    /* ── Status cards ── */
+    .status-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 48px; }
+    @media (max-width: 640px) { .status-row { grid-template-columns: 1fr; } }
+    .status-card {
+      padding: 20px; border-radius: var(--r);
+      background: var(--surface); border: 1px solid var(--border);
+      backdrop-filter: blur(12px); text-align: center;
+    }
+    .status-icon { font-size: 26px; margin-bottom: 8px; display: block; }
+    .status-label { font-size: 13px; font-weight: 600; color: var(--on); margin-bottom: 4px; }
+    .status-val { font-family: var(--mono); font-size: 11px; color: var(--on2); }
+    .status-dot {
+      display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green); box-shadow: 0 0 8px var(--green);
+      margin-right: 5px; animation: dotPulse 2s infinite;
+    }
+
+    /* ── Common issues ── */
+    .issues-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 48px; }
+    @media (max-width: 640px) { .issues-grid { grid-template-columns: 1fr; } }
+    .issue-card {
+      padding: 22px; border-radius: var(--r);
+      background: var(--surface); border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      transition: border-color .3s;
+    }
+    .issue-card:hover { border-color: rgba(0,240,255,.2); }
+    .issue-tag {
+      font-family: var(--mono); font-size: 8px; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 99px;
+      display: inline-block; margin-bottom: 10px;
+    }
+    .issue-tag.tip { color: var(--cyan); background: var(--cyan-10); border: 1px solid rgba(0,240,255,.2); }
+    .issue-tag.fix { color: var(--green); background: var(--green-10); border: 1px solid var(--green-border); }
+    .issue-title { font-size: 14px; font-weight: 700; color: var(--on); margin-bottom: 8px; }
+    .issue-desc { font-size: 13px; color: var(--on2); line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <div class="dot-grid" aria-hidden="true"></div>
+  <div class="scan-line" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav glass">
+    <div class="nav-brand">
+      <img src="assets/logo.png" alt="AdBlocker Shield" class="nav-logo">
+      <span class="nav-brand-text">AdBlocker Shield</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="terms.html" class="nav-link">Terms</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+    <a href="#" class="nav-cta">⬇ Add to Chrome</a>
+    <button class="nav-mobile-toggle" aria-label="Menu">☰</button>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-eyebrow">
+        <span class="page-hero-eyebrow-dot"></span>
+        Help Center
+      </div>
+      <h1>How can we <span>help?</span></h1>
+      <p class="page-hero-sub">
+        Browse common questions below, or send us a message directly.
+        We typically respond within 24–48 hours.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+
+      <!-- Status row -->
+      <div class="status-row">
+        <div class="status-card">
+          <span class="status-icon">⚡</span>
+          <div class="status-label">Extension Status</div>
+          <div class="status-val"><span class="status-dot"></span>Operational</div>
+        </div>
+        <div class="status-card">
+          <span class="status-icon">🔒</span>
+          <div class="status-label">Blocking Rules</div>
+          <div class="status-val"><span class="status-dot"></span>161+ Active</div>
+        </div>
+        <div class="status-card">
+          <span class="status-icon">📬</span>
+          <div class="status-label">Support Response</div>
+          <div class="status-val">Within 24–48 hours</div>
+        </div>
+      </div>
+
+      <!-- Main support grid -->
+      <div class="support-grid">
+
+        <!-- Left: FAQ + Common issues -->
+        <div>
+          <!-- Common issues -->
+          <div class="label-caps label-cyan" style="margin-bottom:20px">QUICK FIXES</div>
+          <div class="issues-grid" style="margin-bottom:40px">
+            <div class="issue-card">
+              <span class="issue-tag fix">Fix</span>
+              <div class="issue-title">Ads still showing after install</div>
+              <div class="issue-desc">Reload your current tabs after installing. Chrome requires a page reload for blocking rules to activate on already-open tabs.</div>
+            </div>
+            <div class="issue-card">
+              <span class="issue-tag fix">Fix</span>
+              <div class="issue-title">YouTube ads still playing</div>
+              <div class="issue-desc">Make sure YouTube Ad Skip is enabled in Shield Settings. If ads persist, YouTube may have updated their player — we push rule updates regularly.</div>
+            </div>
+            <div class="issue-card">
+              <span class="issue-tag tip">Tip</span>
+              <div class="issue-title">Site looks broken with Shield on</div>
+              <div class="issue-desc">Add the site to your whitelist via the popup toggle. This disables blocking for that domain without turning off global protection.</div>
+            </div>
+            <div class="issue-card">
+              <span class="issue-tag tip">Tip</span>
+              <div class="issue-title">Block count shows 0</div>
+              <div class="issue-desc">Browse some pages to accumulate blocks. Counts update as you browse. The dashboard shows lifetime totals which grow over time.</div>
+            </div>
+            <div class="issue-card">
+              <span class="issue-tag fix">Fix</span>
+              <div class="issue-title">Milestone notification not appearing</div>
+              <div class="issue-desc">Make sure Chrome notifications are allowed for extensions. Check Chrome Settings → Notifications and ensure they're enabled.</div>
+            </div>
+            <div class="issue-card">
+              <span class="issue-tag tip">Tip</span>
+              <div class="issue-title">Whitelist not working</div>
+              <div class="issue-desc">After whitelisting a domain, reload that tab. Network-level allow rules are applied on the next page load, not instantly.</div>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="label-caps label-cyan" style="margin-bottom:20px">FREQUENTLY ASKED</div>
+          <div class="faq-list" id="faqList">
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Is AdBlocker Shield really free?
+                <span class="faq-arrow">▾</span>
+              </button>
+              <div class="faq-a">Yes, completely free. No premium tier, no subscription, no hidden costs. AdBlocker Shield is a free Chrome extension. If we introduce optional premium features in the future, the core ad blocking will remain free forever.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Does it collect any of my data?
+                <span class="faq-arrow">▾</span>
+              </button>
+              <div class="faq-a">No. Zero data collection. All statistics and settings are stored in Chrome's local storage on your device. Nothing is ever sent to any server. We don't even have a server to receive data. Read our full Privacy Policy for complete details.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Why do some ads still appear?
+                <span class="faq-arrow">▾</span>
+              </button>
+              <div class="faq-a">No ad blocker blocks 100% of ads on every site. Advertisers constantly adapt, and some ads are served from the same domain as regular content (like YouTube or Facebook), making them harder to block without breaking functionality. We update rules regularly to stay effective.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Will it slow down my browser?
+                <span class="faq-arrow">▾</span>
+              </button>
+              <div class="faq-a">AdBlocker Shield actually speeds up your browsing. By blocking ad network requests before they load, pages load with fewer HTTP requests. The extension itself uses Chrome's native declarativeNetRequest API, which has negligible performance overhead and is the most efficient blocking method available in Chrome.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Is it safe to whitelist a site?
+                <span class="faq-arrow">▾</span>
+              </button>
+              <div class="faq-a">Yes. Whitelisting means you trust that site enough to see its ads — typically a site you want to support financially. Your global protection on all other sites is not affected. You can remove sites from the whitelist at any time from the dashboard.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Does it work in incognito mode?
+                <span class="faq-arrow">▾</span>
+              </button>
+              <div class="faq-a">By default, Chrome extensions don't run in incognito windows. To enable it, go to chrome://extensions, find AdBlocker Shield, click "Details," and toggle "Allow in Incognito." Note that no data is collected in any mode.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                How do I completely uninstall and remove my data?
+                <span class="faq-arrow">▾</span>
+              </button>
+              <div class="faq-a">Right-click the AdBlocker Shield icon in Chrome's toolbar and select "Remove from Chrome." This uninstalls the extension and permanently deletes all locally stored data — block counts, whitelist, and settings. Nothing is retained anywhere.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Can I export my block statistics?
+                <span class="faq-arrow">▾</span>
+              </button>
+              <div class="faq-a">Not currently. Statistics are stored locally in Chrome's storage format. A data export feature may be added in a future version. If this is important to you, let us know via the contact form and we'll prioritize it.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Contact form -->
+        <div id="contact">
+          <div class="contact-card">
+            <div class="contact-card-title">Send us a message</div>
+            <p class="contact-card-sub">We read every message and typically respond within 24–48 hours.</p>
+
+            <form id="supportForm" action="mailto:certifypro.technology@gmail.com" method="GET" enctype="text/plain">
+              <div class="form-group">
+                <label class="form-label" for="name">Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="topic">Topic</label>
+                <select id="topic" name="subject" class="form-select form-input">
+                  <option value="Bug Report">🐛 Bug Report</option>
+                  <option value="Feature Request">💡 Feature Request</option>
+                  <option value="Ads Not Blocked">🚫 Ads Not Being Blocked</option>
+                  <option value="YouTube Issue">▶ YouTube Ad Issue</option>
+                  <option value="Privacy Question">🔒 Privacy Question</option>
+                  <option value="Whitelist Help">✅ Whitelist Help</option>
+                  <option value="General Question">❓ General Question</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="version">Chrome Version (optional)</label>
+                <input type="text" id="version" name="version" class="form-input" placeholder="e.g. Chrome 124 / Windows 11">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Message</label>
+                <textarea id="message" name="body" class="form-textarea" placeholder="Describe your issue or question in detail. The more information you provide, the faster we can help." required></textarea>
+              </div>
+              <div class="form-submit-row">
+                <button type="submit" class="btn-primary" style="width:100%;justify-content:center">
+                  Send Message →
+                </button>
+              </div>
+            </form>
+
+            <div class="toast" id="formToast">
+              ✓ Opening your email client... We'll reply within 24–48 hours.
+            </div>
+
+            <div class="direct-email">
+              <span class="direct-email-label">Or email directly</span>
+              <a href="mailto:certifypro.technology@gmail.com" class="direct-email-link">
+                certifypro.technology@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand" style="margin-bottom:16px">
+            <img src="assets/logo.png" alt="AdBlocker Shield" class="footer-brand-logo">
+            <div><div class="footer-brand-name">AdBlocker Shield</div></div>
+          </div>
+          <p class="footer-brand-desc">Free, privacy-first ad blocker. Zero servers, zero data collection.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Product</div>
+          <a href="#">Add to Chrome</a>
+          <a href="index.html">Home</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Support</div>
+          <a href="support.html">Help Center</a>
+          <a href="mailto:certifypro.technology@gmail.com">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 AdBlocker Shield. All rights reserved.</span>
+        <a href="mailto:certifypro.technology@gmail.com" class="footer-email mono">certifypro.technology@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Form toast
+    document.getElementById('supportForm')?.addEventListener('submit', () => {
+      const toast = document.getElementById('formToast');
+      toast?.classList.add('show');
+    });
+  </script>
+</body>
+</html>
